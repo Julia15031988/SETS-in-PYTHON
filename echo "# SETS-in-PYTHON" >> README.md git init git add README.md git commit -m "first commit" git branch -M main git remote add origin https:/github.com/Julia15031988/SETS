@@ -1,0 +1,173 @@
+TASK 1
+
+# THE list
+A=[1,30, "text", True, 30,100, False]
+#reflect the list
+print("The list A : ", A)
+#Create the SET
+B=set(A)
+#reflect the SET
+print ("The set B : ", B)
+#Create another SET
+C={1,30, "text", True, 30, 100, False}
+#reflect the ST
+print ("The SET C: ", C)
+#Checking if B==C
+print ("Checking the equality of sets : ", B==C)
+#Occurrence of element 1 in set C
+print (" Element 1 in set C : ", 1 in C)
+
+
+TASK 2
+
+#The first set
+A={1,2,3,4}
+print ("The SET A:" , A)
+#The second SET
+B={3,4,5,6}
+print ("The SET B: ", B)
+#The Combining sets
+C=A|B
+print ("The combining of sets  is C :", C)
+#The Combining sets   -second method
+print (A.union (B))
+print (B.union(A))
+#change SET A
+A.update (B)
+print (A)
+#change SET B
+B=B|{-1,-2,-3}
+print (B)
+C|={7,8,9}
+print (C)
+
+TASK 3
+
+#The first SET
+A={1,2,3,4}
+print (A)
+#The 2 SET
+B={3,4,5,6}
+print (B)
+#The Intersection of sets (C)
+C=A&B
+print (C)
+#The Intersection of sets - second method
+print (A.intersection(B))
+print (B.intersection(A))
+#change set A
+A.intersection_update (B)
+print (A)
+#Change set B
+B=B&{4,6,8,10}
+print (B)
+#change C
+C&={1,2,3}
+print (C)
+
+
+TASK 4
+
+#The first set
+A={1,2,3,4}
+print (A)
+#The 2 SET
+B={3,4,5,6}
+print (B)
+#the difference of sets
+C=A-B
+print (C)
+# the difference A-B  -second method
+print (A.difference (B))
+print (B.difference (A))
+#change SET A
+A.difference_update(B)
+print (A)
+#change B
+B.difference_update(A)
+print (B)
+B=B-{4,6,8,10}
+print (B)
+#change C
+C-={1,3,5}
+print (C)
+
+TASK 5
+
+# The first SET
+A={1,2,3,4}
+print (A)
+#The second SET
+B={3,4,5,6}
+print (B)
+#Symmetrical difference between sets
+C=A^B
+#reflect result of C=A^B
+print ("The result of A^B", C)
+#calculate the difference of SEts
+print ("SET A.symmetric_difference(B) ", A.symmetric_difference(B))
+print ("SET B.symmetric_difference(A)", B.symmetric_difference(A))
+#Change the SET A
+A.symmetric_difference_update(B)
+print ("The SET A", A)
+#Change the SET B
+B=B^{4,6,8,10}
+print ("The SET B", B)
+#Change the SET C
+C^={1,3,5}
+print ("THE SET C", C)
+
+
+#The task how to use sets
+
+
+#1
+#The upper limit
+n=100
+#the set from natural numbers
+E={s for s in range(1, n+1)}
+#The set of numbers which have 2 in reminder after division on 5
+A1={s for s in E if s%5==2}
+#The set of numbers which have 4  in reminder after division on 5
+A2={s for s in E if s%5==4}
+#The set of numbers which have 4 and 2  in reminder after division on 5
+A=A1|A2
+#The set of numbers which have 3  in reminder after division on 7
+B={s for s in E if s%7==3}
+#The set of numbers which have 1  in reminder after division on 3
+C={s for s in E if s%3==1}
+D=(A&B)-C
+#reflect the results
+print ("these numbers from 1  to ", n)
+print ("these numbers has 2 or 4 after division by 5, or they has 3 after division by 7 or do not has 1 after division by 3 ")
+print (D)
+
+
+#2
+#The upper limit
+n=100
+# The set with  numbers which has 2 or 4 after division by 5, or they has 3 after division by 7 or do not has 1 after division by 3
+D={s for s in range(1, n+1) if (s%5==2 or s%5==4) and s%7==3 and s%3!=1}
+#reflect the result
+print ("these numbers from 1  to ", n)
+print ("these numbers has 2 or 4 after division by 5, or they has 3 after division by 7 or do not has 1 after division by 3 ")
+print (D)'''
+
+
+#3
+#The upper limit
+n=100
+#the empty set
+D=set()
+#creating the set with numbers which has 2 or 4 after division by 5, or they has 3 after division by 7 or do not has 1 after division by 3
+for s in range (1, n+1):
+    if s%5==2 or s%5==4:
+        if s%7==3:
+            if s%3!=1:
+                D.add(s)
+#reflect  the result
+print ("these numbers from 1  to ", n)
+print ("these numbers has 2 or 4 after division by 5, or they has 3 after division by 7 or do not has 1 after division by 3 ")
+print (D)
+
+
